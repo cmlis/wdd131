@@ -1,0 +1,124 @@
+/* ===== BODY ===== */
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  background-color: #f7f5f2;
+  color: #2e2a27;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #7b4b28;
+  color: white;
+  padding: 1rem;
+}
+
+/* Flex container for title + menu */
+.header-inner {
+  display: flex;
+  justify-content: space-between; /* title left, menu right */
+  align-items: center;
+}
+
+/* Title */
+.header-inner h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Hamburger button (mobile) */
+#hamburger {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: block;
+}
+
+/* Nav links (mobile hidden by default) */
+#nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+#nav-links a:hover {
+  background-color: #c6a664; /* accent color for hover */
+  color: #7b4b28;
+  border-radius: 5px;
+}
+
+/* Show nav when open */
+#nav-links.open {
+  display: flex;
+}
+
+/* ===== MAIN ===== */
+main {
+  max-width: 90%;
+  margin: 1rem auto;
+  padding: 0 0.5rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+figure {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+figure img {
+  width: 100%;
+  display: block;
+}
+
+figcaption {
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: 600;
+  color: #2e2a27;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #7b4b28;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* ===== DESKTOP / LARGE SCREEN ===== */
+@media screen and (min-width: 700px) {
+  #hamburger {
+    display: none; /* hide hamburger on large screens */
+  }
+
+  #nav-links {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  /* Main gallery multi-column */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}

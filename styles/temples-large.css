@@ -1,0 +1,26 @@
+@media screen and (min-width: 700px) {
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  #nav-links {
+    display: flex; /* sempre visível no desktop */
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
