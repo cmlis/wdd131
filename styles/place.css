@@ -1,13 +1,13 @@
 :root {
-  --primary-color: #7b4b28;        /* warm brown */
-  --accent-color: #c6a664;         /* soft golden beige */
-  --background-color: #f7f5f2;     /* light cream */
-  --text-color: #2e2a27;           /* dark brown-gray */
+  --primary-color: #7b4b28;
+  --accent-color: #c6a664;
+  --background-color: #f7f5f2;
+  --text-color: #2e2a27;
   --footer-bg: #7b4b28;
   --footer-text: #fff;
 }
 
-/* Basic body and header */
+/* Body e header */
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -26,7 +26,7 @@ header {
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 70vh; /* desktop */
   overflow: hidden;
 }
 
@@ -34,66 +34,95 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   display: block;
 }
 
-/* Data & Weather Boxes */
-.data,
-.weather {
+/* Data box (top-left) */
+.data {
   position: absolute;
-  background: rgba(255, 248, 238, 0.75); /* semi-transparent */
+  top: 28%;
+  left: 5%;
+  background: rgba(255, 248, 238, 0.75);
   border-radius: 20px;
-  padding: 1rem 2rem 2rem 2rem; /* padding-top reduzido para título próximo ao topo */
+  padding: 1rem 2rem 2rem 2rem;
   max-width: 340px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.35), 0 10px 20px rgba(0,0,0,0.15);
   backdrop-filter: blur(10px);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
 }
 
-/* Hover effect */
-.data:hover,
-.weather:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 55px rgba(0,0,0,0.45), 0 12px 25px rgba(0,0,0,0.2);
-  background: rgba(255, 248, 238, 0.85);
-}
-
-/* Box title (ribbon) */
-.data h2,
-.weather h2 {
-  margin: 0 0 0.8rem 0; /* título mais próximo do topo */
+.data h2 {
+  margin: 0 0 0.8rem 0;
   padding: 0.6rem 1rem;
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--primary-color);
-  background: rgba(198, 166, 100, 0.85); /* semi-transparent ribbon */
+  background: rgba(198, 166, 100, 0.85);
   border-radius: 12px;
   text-shadow: 0 1px 1px rgba(0,0,0,0.15);
   display: inline-flex;
   align-items: center;
   box-shadow: 0 3px 8px rgba(0,0,0,0.25);
-  letter-spacing: 0.5px;
-  font-family: "Segoe UI", sans-serif;
+  position: relative;
 }
 
+.data h2::after,
+.weather h2::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin-top: 6px;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
 
-
-/* Data list */
+/* Lista sem bullets */
 .data ul {
-  list-style: none; /* sem bullets */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .data li {
   margin-bottom: 0.5rem;
-  padding-left: 0;
 }
 
-/* Weather content */
+/* Weather box (bottom-right inside hero) */
+.weather {
+  position: absolute;
+  bottom: 8%;
+  right: 5%;
+  max-width: 340px;
+  background: rgba(255, 248, 238, 0.75);
+  border-radius: 20px;
+  padding: 1rem 2rem 2rem 2rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35), 0 10px 20px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+}
+
+.weather h2 {
+  margin: 0 0 0.8rem 0;
+  padding: 0.6rem 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background: rgba(198, 166, 100, 0.85);
+  border-radius: 12px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  position: relative;
+}
+
 .weather p {
   margin: 0.4rem 0;
   line-height: 1.3;
+  display: flex;
+  align-items: center; /* Alinha texto e ícone */
+  flex-wrap: wrap;
 }
 
 .weather span {
@@ -101,23 +130,32 @@ header {
   color: var(--primary-color);
 }
 
-
-.data { top: 28%; left: 5%; }        
-.weather { bottom: 1%; right: 5%; } 
-
-/* Footer */
-footer {
-  background-color: var(--footer-bg);
-  color: var(--footer-text);
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
+/* Weather icon container */
+.weather-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.3rem;
 }
 
+/* Mobile icon (SVG) */
+.mobile-icon {
+  display: none;       /* escondido no desktop */
+  width: 18px;         /* tamanho pequeno */
+  height: 18px;
+  vertical-align: middle;
+}
 
+/* Desktop icon (emoji) */
+.desktop-icon {
+  display: inline;     /* padrão desktop */
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+/* Mobile media query */
 @media (max-width: 700px) {
   .hero {
-    height: 85vh;
+    height: 80vh;
   }
 
   .data,
@@ -125,11 +163,10 @@ footer {
     position: static;
     max-width: 90%;
     margin: 2rem auto 1rem auto;
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    padding: 1.5rem;
     border-radius: 16px;
-    background-color: rgba(255,248,238,0.85); /* semi-transparent */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     backdrop-filter: none;
+    background: rgba(255,248,238,0.85);
   }
 
   .data h2,
@@ -142,12 +179,27 @@ footer {
     text-shadow: none;
   }
 
-  main {
-    text-align: center;
+  .data h2::after,
+  .weather h2::after {
+    display: none;
   }
 
-  .data li {
-    padding-left: 0;
-    margin-bottom: 0.5rem;
+  /* Mostrar apenas o SVG no mobile */
+  .mobile-icon {
+    display: inline-block !important;
   }
+
+  /* Esconder emoji no mobile */
+  .desktop-icon {
+    display: none !important;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
 }

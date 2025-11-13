@@ -4,10 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moab, Utah</title>
+
+  <!-- SEO meta tags -->
+  <meta name="description" content="Explore Moab, Utah: population, area, weather, and famous parks like Arches & Canyonlands.">
+  <meta name="author" content="Camila Santana">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles/place.css">
-  <script src="scripts/getdates.js" defer></script>
+
+  <!-- Scripts -->
   <script src="scripts/place.js" defer></script>
-  
+  <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
   <header>
@@ -16,13 +23,14 @@
 
   <picture class="hero">
     <!-- Mobile image -->
-    <source srcset="images/moab.png" media="(max-width: 600px)" type="image/png">
+    <source srcset="images/moab.webp" media="(max-width: 600px)" type="image/webp">
     <!-- Desktop image -->
-    <source srcset="images/moab.png" media="(min-width: 601px)" type="image/png">
-    <img src="images/moab.jpg" alt="Red rock landscape of Moab, Utah">
+    <source srcset="images/moab.webp" media="(min-width: 601px)" type="image/webp">
+    <img src="images/moab.webp" alt="Red rock landscape of Moab, Utah">
   </picture>
 
   <main>
+    <!-- Data box (top-left) -->
     <section class="data">
       <h2>Data</h2>
       <ul>
@@ -37,17 +45,27 @@
       </ul>
     </section>
 
+    <!-- Weather box (bottom-right) -->
     <section class="weather">
       <h2>Weather</h2>
-      <p><strong>Temperature:</strong> <span id="temp">15</span> °C</p>
+      <p>
+        <strong>Temperature:</strong> <span id="temp"> 15</span> °C
+        <span class="weather-icon">
+          <!-- Mobile SVG icon -->
+          <img src="images/sun_icon.svg" alt="Sun" class="mobile-icon">
+          <!-- Desktop emoji -->
+          <span class="desktop-icon">⛅</span>
+        </span>
+      </p>
       <p><strong>Conditions:</strong> Partly Cloudy</p>
-      <p><strong>Wind:</strong> <span id="wind">6</span> km/h</p>
+      <p><strong>Wind:</strong> <span id="wind"> 6</span> km/h</p>
       <p><strong>Wind Chill:</strong> <span id="windchill"></span></p>
     </section>
   </main>
- <footer>
-        <p>&copy; <span id="currentyear"></span> Camila Santana, Utah, USA</p>
-        <p id="lastModified"></p>
-    </footer>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> Camila Santana, Utah, USA</p>
+    <p id="lastModified"></p>
+  </footer>
 </body>
 </html>
