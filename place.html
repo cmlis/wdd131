@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moab, Utah</title>
+  <link rel="stylesheet" href="styles/place.css">
+  <script src="scripts/getdates.js" defer></script>
+  <script src="scripts/place.js" defer></script>
+  
+</head>
+<body>
+  <header>
+    <h1>Moab, Utah</h1>
+  </header>
+
+  <picture class="hero">
+    <!-- Mobile image -->
+    <source srcset="images/moab.png" media="(max-width: 600px)" type="image/png">
+    <!-- Desktop image -->
+    <source srcset="images/moab.png" media="(min-width: 601px)" type="image/png">
+    <img src="images/moab.jpg" alt="Red rock landscape of Moab, Utah">
+  </picture>
+
+  <main>
+    <section class="data">
+      <h2>Data</h2>
+      <ul>
+        <li><strong>Area:</strong> 13.29 sq km</li>
+        <li><strong>Population:</strong> 5,366 (2023)</li>
+        <li><strong>State:</strong> Utah, USA</li>
+        <li><strong>Founded:</strong> 1902</li>
+        <li><strong>Elevation:</strong> 1,227 m</li>
+        <li><strong>Time Zone:</strong> UTC−7 (Mountain Time)</li>
+        <li><strong>ZIP Code:</strong> 84532</li>
+        <li><strong>Known For:</strong> Arches & Canyonlands National Parks</li>
+      </ul>
+    </section>
+
+    <section class="weather">
+      <h2>Weather</h2>
+      <p><strong>Temperature:</strong> <span id="temp">15</span> °C</p>
+      <p><strong>Conditions:</strong> Partly Cloudy</p>
+      <p><strong>Wind:</strong> <span id="wind">6</span> km/h</p>
+      <p><strong>Wind Chill:</strong> <span id="windchill"></span></p>
+    </section>
+  </main>
+ <footer>
+        <p>&copy; <span id="currentyear"></span> Camila Santana, Utah, USA</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
