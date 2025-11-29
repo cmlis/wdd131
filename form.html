@@ -27,51 +27,68 @@
 </header>
 
 <main>
-    <form method="get" action="review.html" id="reviewForm">
+   <form method="get" action="review.html" id="reviewForm">
 
-        <!-- PRODUCT NAME -->
-        <label for="product">Product Name</label>
-        <select id="product" name="product" required>
-            <option value="" disabled selected>Select a Product ...</option>
-            <!-- JS will populate here -->
-        </select>
+    <!-- PRODUCT NAME -->
+    <label for="product">Product Name</label>
+    <select id="product" name="product" required>
+        <option value="" disabled selected>Select a Product ...</option>
+        <!-- JS will populate here -->
+    </select>
 
-        <!-- OVERALL RATING -->
-        <label>Overall Rating</label>
-        <div class="rating-group">
-            <label><input type="radio" name="rating" value="1" required> ☆</label>
-            <label><input type="radio" name="rating" value="2" required> ☆☆</label>
-            <label><input type="radio" name="rating" value="3" required> ☆☆☆</label>
-            <label><input type="radio" name="rating" value="4" required> ☆☆☆☆</label>
-            <label><input type="radio" name="rating" value="5" required> ☆☆☆☆☆</label>
-        </div>
+    <!-- OVERALL RATING -->
+    <label>Overall Rating</label>
+    <div class="rating-group">
+        <input type="radio" id="rating1" name="rating" value="1" required>
+        <label for="rating1">☆</label>
 
-        <!-- DATE -->
-        <label for="installDate">Date of Installation</label>
-        <input type="date" id="installDate" name="installDate" required>
+        <input type="radio" id="rating2" name="rating" value="2" required>
+        <label for="rating2">☆☆</label>
 
-        <!-- CHECKBOXES -->
-        <fieldset class="features-box">
-            <legend>Which features did you find useful? (Check all that apply)</legend>
+        <input type="radio" id="rating3" name="rating" value="3" required>
+        <label for="rating3">☆☆☆</label>
 
-            <label><input type="checkbox" name="features" value="Durability"> Durability</label>
-            <label><input type="checkbox" name="features" value="Ease of Use"> Ease of Use</label>
-            <label><input type="checkbox" name="features" value="Performance"> Performance</label>
-            <label><input type="checkbox" name="features" value="Design"> Design</label>
-        </fieldset>
+        <input type="radio" id="rating4" name="rating" value="4" required>
+        <label for="rating4">☆☆☆☆</label>
 
-        <!-- WRITTEN REVIEW -->
-        <label for="writtenReview">Written Review (Optional)</label>
-        <textarea id="writtenReview" name="writtenReview" rows="5"></textarea>
+        <input type="radio" id="rating5" name="rating" value="5" required>
+        <label for="rating5">☆☆☆☆☆</label>
+    </div>
 
-        <!-- USER NAME -->
-        <label for="userName">Your Name (Optional)</label>
-        <input type="text" id="userName" name="userName">
+    <!-- DATE -->
+    <label for="installDate">Date of Installation</label>
+    <input type="date" id="installDate" name="installDate" required>
 
-        <!-- SUBMIT -->
-        <input type="submit" value="Post Review" class="submit-btn">
+    <!-- CHECKBOXES -->
+    <fieldset class="features-box">
+        <legend>Which features did you find useful? (Check all that apply)</legend>
 
-    </form>
+        <input type="checkbox" id="feature1" name="features" value="Durability">
+        <label for="feature1">Durability</label>
+
+        <input type="checkbox" id="feature2" name="features" value="Ease of Use">
+        <label for="feature2">Ease of Use</label>
+
+        <input type="checkbox" id="feature3" name="features" value="Performance">
+        <label for="feature3">Performance</label>
+
+        <input type="checkbox" id="feature4" name="features" value="Design">
+        <label for="feature4">Design</label>
+    </fieldset>
+
+    <!-- WRITTEN REVIEW -->
+    <label for="writtenReview">Written Review (Optional)</label>
+    <textarea id="writtenReview" name="writtenReview" rows="5"></textarea>
+
+    <!-- USER NAME -->
+    <label for="userName">Your Name (Optional)</label>
+    <input type="text" id="userName" name="userName">
+
+    <!-- SUBMIT -->
+    <input type="submit" value="Post Review" class="submit-btn">
+
+</form>
+
 </main>
     <footer>
         <p>&copy; <span id="currentyear"></span> | Camila Santana | <span id="lastModified"></span></p>
