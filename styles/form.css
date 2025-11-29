@@ -1,0 +1,187 @@
+:root {
+  --primary-color: #7b4b28;      /* warm brown */
+  --accent-color: #c6a664;       /* soft golden beige */
+  --background-color: #f7f5f2;   /* light cream */
+  --text-color: #2e2a27;         /* dark brown-gray */
+  --card-bg: #ffffff;
+  --footer-bg: #7b4b28;
+  --footer-text: #ffffff;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* PAGE */
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+/* HEADER */
+header {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+/* MAIN CONTAINER */
+main {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e0d9cf;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 600px;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+/* LABELS */
+label,
+legend {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* FORM INPUTS */
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: 1px solid #d9cdbf;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text-color);
+  font-size: 1rem;
+  outline-color: var(--accent-color);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* RATING */
+.rating-group {
+  margin-top: 0.5rem;
+}
+
+.rating-group label {
+  margin-right: 1rem;
+  font-size: 1.4rem;
+  color: var(--accent-color); /* stars in gold-beige */
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.rating-group label:hover,
+.rating-group input[type="radio"]:checked + label {
+  color: var(--primary-color);
+}
+
+.rating-group input[type="radio"] {
+  margin-right: 0.3rem;
+}
+
+/* FEATURES BOX */
+.features-box {
+  margin-top: 1rem;
+  border: 1px solid #e6ddcf;
+  border-radius: 6px;
+  padding: 1rem;
+  background: #fdfbf7; /* slightly warm cream */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.features-box label {
+  display: block;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* TEXTAREA */
+textarea {
+  resize: vertical;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: var(--accent-color); /* golden beige */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: var(--primary-color); /* warm brown */
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  margin-top: 2rem;
+}
+
+/* MEDIA QUERIES */
+
+/* Mobile (small screens) */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .submit-btn {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .rating-group label {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop (larger screens) */
+@media (min-width: 601px) {
+  main {
+    width: 600px; /* mantém largura fixa no desktop */
+  }
+}
