@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Tea Tales</title>
+  <meta name="author" content="Camila Santana">
+  <meta name="description" content="Get in touch with Tea Tales! Share your suggestions, ask questions, or provide corrections for our tea profiles. We'd love to hear from you.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/tea.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="tiatea.html">Tea Tales</a>
+      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false">☰ Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="tiatea.html">Home</a></li>
+          <li><a href="teas.html">Teas</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Contact</h1>
+    <p>If you have suggestions or corrections for the tea profiles, please get in touch.</p>
+
+    <form id="contact-form">
+      <label for="cname">Name</label>
+      <input id="cname" name="cname" type="text" required />
+
+      <label for="cemail">Email</label>
+      <input id="cemail" name="cemail" type="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send Message</button>
+      <div id="contact-msg" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+   <footer>
+        <p>&copy; <span id="currentyear"></span> | Camila Santana | <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="scripts/tea.js" defer></script>
+     <script src="scripts/getdates.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Teas — Tea Tales</title>
+  <meta name="author" content="Camila Santana">
+  <meta name="description" content="Profiles for chamomile, hibiscus, senna and other teas with history and benefits.">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/tea.css">
+  <script src="scripts/getdates.js" defer></script>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="tiatea.html">Tea Tales</a>
+      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false">☰ Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="tiatea.html">Home</a></li>
+          <li><a href="teas.html" aria-current="page">Teas</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Teas</h1>
+
+    <div class="controls">
+      <label for="search">Search teas</label>
+      <input id="search" type="search" placeholder="Search by name or benefit" />
+
+      <label for="filter">Filter by property</label>
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="calming">Calming</option>
+        <option value="digestive">Digestive</option>
+        <option value="circulation">Circulation</option>
+      </select>
+    </div>
+
+    <section id="teas-list" class="teas-list" aria-live="polite">
+      <!-- JS will render tea cards here using template literals -->
+    </section>
+
+    <template id="tea-card-template">
+      <article class="tea-card">
+        <img class="tea-img" alt="" width="320" height="180" loading="lazy">
+        <div class="tea-card-body">
+          <h3 class="tea-name"></h3>
+          <p class="tea-origin"></p>
+          <p class="tea-benefit"></p>
+          <button class="details-btn">Details</button>
+          <button class="fav-btn" aria-pressed="false" title="Add to favorites">☆</button>
+        </div>
+      </article>
+    </template>
+  </main>
+
+<!-- Modal -->
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button id="modal-close" aria-label="Close modal">&times;</button>
+    <h3 id="modal-title"></h3>
+    <img id="modal-img" src="" alt="">
+    <p id="modal-origin"></p>
+    <p id="modal-benefit"></p>
+  </div>
+</div>
+
+<!-- Template de chá -->
+<template id="tea-card-template">
+  <div class="tea-card">
+    <img class="tea-img" src="" alt="" loading="lazy">
+    <div class="tea-card-body">
+      <h4 class="tea-name"></h4>
+      <p class="tea-origin"></p>
+      <p class="tea-benefit"></p>
+      <div class="tea-card-controls">
+        <button class="details-btn">Details</button>
+        <button class="fav-btn" aria-pressed="false">☆</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+   <footer>
+        <p>&copy; <span id="currentyear"></span> | Camila Santana | <span id="lastModified"></span></p>
+    </footer>
+
+   <script src="scripts/tea.js" defer></script>
+  
+</body>
+</html>
