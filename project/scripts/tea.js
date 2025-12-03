@@ -3,7 +3,7 @@ yearSpan.textContent = new Date().getFullYear();
 
 
 const lastModifiedParagraph = document.getElementById("lastModified");
-lastModifiedParagraph.textContent = `Last modified: ${document.lastModified}`;
+lastModifiedParagraph.textContent = `Last modified: ${document.lastModified} | Utah, USA`;
 
 
 
